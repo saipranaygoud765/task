@@ -1,0 +1,30 @@
+<app-form></app-form>
+
+<div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>student name</th>
+                <th>roll number</th>
+                <th>total marks</th>
+                <th>status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let a of data; let i = index">
+                <td>
+                    {{a.name}}
+                </td>
+
+                <td>{{a.rollNumber}}</td>
+
+                <td>{{computeMarks(a.marks.Maths , a.marks.English , a.marks.Science)}}</td>
+
+                <td>
+                    <span *ngIf="passArray[i]==true" class="green">Pass</span>
+                    <span *ngIf="passArray[i]==false" class="red">Fail</span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
